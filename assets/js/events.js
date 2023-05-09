@@ -17,7 +17,6 @@ document.getElementById('btnCopy').onclick = onCopyButtonClick;
 
 // Écouteur pour charger la liste des polices Google et mettre à jour les valeurs des tailles de police
 document.addEventListener("DOMContentLoaded", () => {
-    const apiKey = "AIzaSyCGSRPFktjIxbGlNC7bG8Kyb2b9LHJmMn8";
     const fontSelector = document.getElementById('fontSelector');
 
     fetch('./assets/data/google_fonts_list.json')
