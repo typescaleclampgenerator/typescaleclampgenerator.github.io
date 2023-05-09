@@ -1,0 +1,158 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This is a type scale generator using clamp() css property">
+    <title>Type Scale Clamp Generator v3.2.0</title>
+    <meta name="author" content="Maxime Roudier">
+
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/css/reset.css" rel="stylesheet">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div id="mainSection">
+        <div class="render-section-wrapper">
+            <header class="render-section-header">
+                <span>Type Scale Clamp Generator v3.2.0</span>
+            </header>
+            <main class="render-section-main">
+                <div id="renderSection">
+                    <div class="render-window-header">
+                        <button class="code-window-button apple__red__button" aria-label="close button">
+                            <span>
+                                <img src="./assets/images/facepalm.gif" alt="facepalm">
+                            </span>
+                        </button>
+                        <div class="code-window-button apple__orange__button"></div>
+                        <div class="code-window-button apple__green__button"></div>
+                    </div>
+                    <div class="render-window-content" id="render-window-content">
+                        <!-- Section généré en js -->
+                    </div>
+                </div>
+            </main>
+            <footer class="render-section-footer">
+                <div class="render-footer-wrapper"> 
+                    <span class="render-footer-title">Share on</span>
+                    <ul class="render-footer-sharing">
+                        <li class="footer-sharing-item">
+                            <a class="footer-sharing-link" href="https://twitter.com/intent/tweet?url=https://maximeroudier.fr/typeScaleClampGenerator&text=Discover+this+new+type+scale+generator+using+clamp+css+property+on+:&hashtags=css,clamp" target="blank" rel="noopener noreferrer">
+                                <img class="footer-sharing-img" src="./assets/images/twitter.png" alt="Share Page on Twitter" />
+                            </a>
+                        </li>
+                        <li class="footer-sharing-item">
+                            <a class="footer-sharing-link" href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.maximeroudier.com/typeScaleClampGenerator&title=Css+Clamp+generator&summary=type+scale+generator+using+clamp+css+property&source=Maxime+Roudier" target="blank" rel="noopener noreferrer">
+                                <img class="footer-sharing-img" src="./assets/images/linkedin.png" alt="Share Page on LinkedIn" />
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <button class="footer-code-button" id="outputButton">Output Code</button>
+            </footer>
+        </div>
+
+        <aside class="settings-aside">
+            <div class="settings-wrapper">
+                <div class="settings-size" id="rangeSizeWrapper">
+                    <label class="settings-size-title" for="fontSelector">Font sizes</label>
+                    <!-- Section généré en js -->
+                </div>
+                <div class="settings-viewport">
+                    <label class="settings-viewport-title" for="viewportWidth">Viewport width</label>
+                    <div class="settings-viewport-wrapper">
+                        <div class="settings-viewport-min">
+                            <input type="number" id="viewportWidth-min" class="settings-viewport-input" value="576">
+                            <span class="settings-viewport-unit">px</span>
+                        </div>
+                        <div class="settings-viewport-max">
+                            <input type="number" id="viewportWidth-max" class="settings-viewport-input" value="1200">
+                            <span class="settings-viewport-unit">px</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="settings-font">
+                    <label class="settings-font-title" for="fontSelector">Font family</label>
+                    <select class="settings-font-select" name="fontSelector" id="fontSelector">
+                        <!-- Option généré en js -->
+                    </select>
+                    <span class="settings-font-dropsign"><i class="arrow"></i></span>
+                </div>
+                <div class="settings-text">
+                    <label class="settings-text-title" for="messageTextInput">Preview text</label>
+                    <input class="settings-text-input" type="text" id="messageTextInput" name="messageTextInput" placeholder="Type something..." value="The quick brown fox jumps over the lazy dog.">
+                </div>
+                <div class="settings-window">
+                    <label class="settings-window-title" for="rangeScreenWidthInput">Section Width <span>( <span id="rangeScreenIndication">500</span> px )</span></label>
+                    <input type="range" id="rangeScreenWidthInput" name="rangeScreenWidthInput" min="30" value="75" max="100">
+                </div>
+            </div>
+            <div class="settings-reset">
+                <button id="resetButton">Reset settings</button>
+            </div>
+        </aside>
+    </div>
+
+    <div id="codeSection">
+        <div id="codeSectionWindow" class="code-section-window">
+            <div class="code-section-header">
+                <button class="apple__red__button code-window-button" id="codeSectionCloseButton" aria-label="close button"></button>
+                <div class="apple__orange__button code-window-button"></div>
+                <div class="apple__green__button code-window-button"></div>
+            </div>
+            <div class="code-section-content">
+                <ul class="code-number-list">
+                    <!-- Section généré en js -->
+                </ul>
+                <ul class="code-text-list" id="code_result">
+                    <!-- Section généré en js -->
+                </ul>
+            </div>
+            <div class="code-section-footer">
+                <button class="code-copy-button" id="btnCopy">
+                    <svg id="light" enable-background="new 0 0 24 24" height="512" viewBox="0 0 24 24" width="512" xmlns="http://www.w3.org/2000/svg">
+                        <g>
+                            <path fill="#FFFFFF" d="m10.5 21h-8c-1.378 0-2.5-1.122-2.5-2.5v-13c0-1.378 1.122-2.5 2.5-2.5h2c.276 0 .5.224.5.5s-.224.5-.5.5h-2c-.827 0-1.5.673-1.5 1.5v13c0 .827.673 1.5 1.5 1.5h8c.276 0 .5.224.5.5s-.224.5-.5.5z"/>
+                        <g>
+                            <path fill="#FFFFFF" d="m16.5 9c-.276 0-.5-.224-.5-.5v-3c0-.827-.673-1.5-1.5-1.5h-2c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h2c1.378 0 2.5 1.122 2.5 2.5v3c0 .276-.224.5-.5.5z"/>
+                        <g>
+                            <path fill="#FFFFFF" d="m11.5 6h-6c-.827 0-1.5-.673-1.5-1.5v-2c0-.276.224-.5.5-.5h1.55c.233-1.14 1.242-2 2.45-2s2.217.86 2.45 2h1.55c.276 0 .5.224.5.5v2c0 .827-.673 1.5-1.5 1.5zm-6.5-3v1.5c0 .276.224.5.5.5h6c.276 0 .5-.224.5-.5v-1.5h-1.5c-.276 0-.5-.224-.5-.5 0-.827-.673-1.5-1.5-1.5s-1.5.673-1.5 1.5c0 .276-.224.5-.5.5z"/>
+                        <g>
+                            <path fill="#FFFFFF" d="m22.5 24h-9c-.827 0-1.5-.673-1.5-1.5v-11c0-.827.673-1.5 1.5-1.5h6.171c.667 0 1.295.26 1.768.732l1.829 1.829c.472.472.732 1.1.732 1.768v8.171c0 .827-.673 1.5-1.5 1.5zm-9-13c-.276 0-.5.224-.5.5v11c0 .276.224.5.5.5h9c.276 0 .5-.224.5-.5v-8.171c0-.395-.16-.781-.439-1.061l-1.829-1.829c-.279-.279-.666-.439-1.061-.439z"/>
+                        <g>
+                            <path fill="#FFFFFF" d="m20.5 17h-5c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h5c.276 0 .5.224.5.5s-.224.5-.5.5z"/>
+                        <g>
+                            <path fill="#FFFFFF" d="m20.5 20h-5c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h5c.276 0 .5.224.5.5s-.224.5-.5.5z"/>
+                    </svg>
+                    <span>Copy to clipboard</span>
+                    <span id="copyDone">Done !</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="mobileAlertMessage">
+        <div class="alert-wrapper">
+            <div class="alert-header">
+                <div class="alert-window-button apple__red__button"></div>
+                <div class="alert-window-button apple__orange__button"></div>
+                <div class="alert-window-button apple__green__button"></div>
+            </div>
+            <div class="alert-content">
+                <p class="alert-text">I'm afraid that the generator isn't really relevant on small device!</p>
+                <p class="alert-text">I can only advise you to come later with a wider device 🙂</p>
+                <p class="alert-text">See you later 👋</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+<script src="./assets/js/variables.js"></script>
+<script src="./assets/js/functions.js"></script>
+<script src="./assets/js/events.js"></script>
+
+</html>
