@@ -3,13 +3,15 @@
 const createSizeContainer = (size, min, max, visible) => {
   let checked = visible ? 'checked' : '';
   let controlClass = visible ? '' : 'control--closed';
+  let tabIndex = visible ? '' : 'tabindex="-1"';
 
   const sizeContainerHTML = sizeContainerTemplate
     .replace(/%SIZE%/g, size)
     .replace('%MIN_VALUE%', min)
     .replace('%MAX_VALUE%', max)
     .replace('%CHECKED%', checked)
-    .replace('%CONTROL_CLASS%', controlClass);
+    .replace('%CONTROL_CLASS%', controlClass)
+    .replace(/%TABINDEX%/g, tabIndex);
 
   return sizeContainerHTML;
 }
@@ -110,6 +112,11 @@ const openCodeSection = () => {
       }
     }
   }
+  
+  // Ajouter le focus sur le premier élément de la modale
+  const codeSectionWindow = document.getElementById('codeSectionWindow');
+  codeSectionWindow.setAttribute('tabindex', '0');
+  codeSectionWindow.focus();
 }
 
 const closeCodeSection = () => {
@@ -120,6 +127,11 @@ const closeCodeSection = () => {
   codeNumbersLis.forEach(li => li.remove());
   const codeTextLis = CODE_SECTION_TEXT_LIST.querySelectorAll('li');
   codeTextLis.forEach(li => li.remove());
+
+  // Supprimer le focus de la modale
+  const codeSectionWindow = document.getElementById('codeSectionWindow');
+  codeSectionWindow.removeAttribute('tabindex');
+  codeSectionWindow.blur();
 }
 
 const updateMinMaxAttributes = (minInput, maxInput) => {
@@ -220,10 +232,21 @@ const toggleSettingsSizeControl = (checkbox) => {
     const sizeElement = checkbox.parentNode.parentNode;
     const sizeName = checkbox.name.replace('choose-size-', '');
     const settingsSizeControl = sizeElement.querySelector('.settings-size-control');
-    if(sizeValues[sizeName].visible === true){ settingsSizeControl.classList.add('control--closed'); } else{ settingsSizeControl.classList.remove('control--closed'); }
-    if(sizeValues[sizeName].visible === true){ sizeValues[sizeName].visible = false; } else{ sizeValues[sizeName].visible = true; }
+    if (sizeValues[sizeName].visible === true) { 
+      settingsSizeControl.classList.add('control--closed');
+      settingsSizeControl.querySelectorAll('.size-control-input').forEach(input => {
+        input.setAttribute('tabindex', '-1');
+      });
+    } else { 
+      settingsSizeControl.classList.remove('control--closed');
+      settingsSizeControl.querySelectorAll('.size-control-input').forEach(input => {
+        input.removeAttribute('tabindex');
+      });
+    }
+    sizeValues[sizeName].visible = !sizeValues[sizeName].visible;
   }
 };
+
 
 const toggleRenderText = (size, isVisible) => {
   const renderTextParent = RENDER_SECTION.querySelector(`[data-size-name="${size}"]`);

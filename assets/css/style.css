@@ -12,6 +12,12 @@
     --color-heading: #274942ff;
 }
 
+/* Access */
+
+*:focus-visible{
+    outline: 2px solid var(--color-heading)!important;
+}
+
 /* ----- Main ----- */
 
 h1, h2, h3, h4, h5, h6, p, span, a, li, button{
@@ -54,7 +60,7 @@ body {
     padding: 1.5rem;
 }
 
-.render-section-header span{
+.render-section-header h1{
     font-size: .875rem;
     line-height: 1.25rem;
 }
@@ -96,6 +102,10 @@ body {
     border-top-left-radius: 0.25rem;
     border-top-right-radius: 0.25rem;
     background-color: var(--color-heading);
+}
+
+#renderSection .render-window-header .code-window-button:focus-visible{
+    outline: 2px solid var(--color-white)!important;
 }
 
 .render-window-header .code-window-button{
@@ -657,6 +667,10 @@ button.code-window-button:focus span{
 
 .code-section-header .code-window-button.apple__red__button{
     margin-left: 1rem;
+}
+
+.code-section-header .code-window-button:focus-visible{
+    outline: 2px solid var(--color-white)!important;
 }
 
 .code-section-window .code-section-content{

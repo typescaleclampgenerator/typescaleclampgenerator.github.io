@@ -45,11 +45,11 @@ const sizeContainerTemplate = `
         </div>
         <div class="settings-size-control %CONTROL_CLASS%">
             <div class="size-control-min">
-                <input type="number" id="size-%SIZE%-min" class="size-control-input" value="%MIN_VALUE%" step="0.01">
+                <input type="number" id="size-%SIZE%-min" class="size-control-input" value="%MIN_VALUE%" step="0.01" %TABINDEX%>
                 <span class="size-control-unit">rem</span>
             </div>
             <div class="size-control-max">
-                <input type="number" id="size-%SIZE%-max" class="size-control-input" value="%MAX_VALUE%" step="0.01">
+                <input type="number" id="size-%SIZE%-max" class="size-control-input" value="%MAX_VALUE%" step="0.01" %TABINDEX%>
                 <span class="size-control-unit">rem</span>
             </div>
         </div>
